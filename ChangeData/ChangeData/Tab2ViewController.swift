@@ -8,23 +8,27 @@
 
 import UIKit
 
+protocol ViewController2Delegate {
+    func showData(data:String)
+}
 class Tab2ViewController: UIViewController {
+    
+    var delegate:ViewController2Delegate?
 
+    @IBOutlet weak var text2: UITextField!
+    var hienthi:String!
+    
+    
+    @IBAction func Pre(_ sender: Any) {
+        delegate?.showData(data: text2.text ?? "")
+        navigationController?.popViewController(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        text2.text = hienthi
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
+
+
