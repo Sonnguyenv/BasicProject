@@ -16,6 +16,9 @@ class ViewController: UIViewController {
         print("View did load")
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
 
 }
 
