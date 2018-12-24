@@ -8,25 +8,29 @@
 
 import UIKit
 
-protocol ViewController2Delegate {
-    func showData(data:String)
+protocol ViewController2Delegate: class {
+    func showData(data: String)
+    
+    
 }
 class Tab2ViewController: UIViewController {
     
-    var delegate:ViewController2Delegate?
 
     @IBOutlet weak var text2: UITextField!
-    var hienthi:String!
     
+    var lable2: String = ""
+    weak var delegate: ViewController2Delegate?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        text2.text = lable2
+    }
     
     @IBAction func Pre(_ sender: Any) {
         delegate?.showData(data: text2.text ?? "")
         navigationController?.popViewController(animated: true)
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        text2.text = hienthi
-    }
+   
 }
 
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, ViewController2Delegate {
+class ViewController: UIViewController {
     
     func showData(data: String) {
         text1.text = data
@@ -17,21 +17,20 @@ class ViewController: UIViewController, ViewController2Delegate {
 
     @IBOutlet weak var text1: UITextField!
     
-    
-    @IBAction func next(_ sender: Any) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let Scre2 = sb.instantiateViewController(withIdentifier: "Tab2") as! Tab2ViewController
-        Scre2.hienthi = text1.text
-        Scre2.delegate = self
-        self.navigationController?.pushViewController(Scre2, animated: true)
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-    
+    @IBAction func next(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let screen = sb.instantiateViewController(withIdentifier: "Tab2") as! Tab2ViewController
+        screen.lable2 = text1.text ?? ""
+        screen.delegate = self
+        navigationController?.pushViewController(screen, animated: true)
+        
+    }
+}
+extension ViewController: ViewController2Delegate {
     
 }
 
