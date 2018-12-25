@@ -10,11 +10,9 @@ import UIKit
 
 protocol ViewController2Delegate: class {
     func showData(data: String)
-    
-    
 }
+
 class Tab2ViewController: UIViewController {
-    
 
     @IBOutlet weak var text2: UITextField!
     
@@ -30,7 +28,6 @@ class Tab2ViewController: UIViewController {
         delegate?.showData(data: text2.text ?? "")
         navigationController?.popViewController(animated: true)
     }
-   
 }
 
 

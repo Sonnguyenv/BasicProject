@@ -9,11 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    func showData(data: String) {
-        text1.text = data
-    }
-    
 
     @IBOutlet weak var text1: UITextField!
     
@@ -31,6 +26,8 @@ class ViewController: UIViewController {
     }
 }
 extension ViewController: ViewController2Delegate {
-    
+    func showData(data: String) {
+        text1.text = data
+    }
 }
 
