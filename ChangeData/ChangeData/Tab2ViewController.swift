@@ -17,9 +17,10 @@ class Tab2ViewController: UIViewController {
     @IBOutlet weak var text2: UITextField!
     
     var lable2: String = ""
-    var onCompletion: ((_ data: String) -> ())?
+
 //    weak var delegate: ViewController2Delegate?
     
+//    var onCompletion: ((_ data: String) -> ())?
     override func viewDidLoad() {
         super.viewDidLoad()
         text2.text = lable2
@@ -27,7 +28,8 @@ class Tab2ViewController: UIViewController {
     
     @IBAction func Pre(_ sender: Any) {
 //        delegate?.showData(data: text2.text ?? "")
-        onCompletion?(text2.text ?? "")
+//        onCompletion?(text2.text ?? "")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "myNotification"), object: nil, userInfo: ["messenger": text2.text ?? ""])
         navigationController?.popViewController(animated: true)
     }
 }
