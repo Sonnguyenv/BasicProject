@@ -100,12 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				30B2572021CC93F20039EF63 /* AppDelegate.swift */,
-				30B2572221CC93F20039EF63 /* ViewController.swift */,
 				30B2572421CC93F20039EF63 /* Main.storyboard */,
+				30B2572221CC93F20039EF63 /* ViewController.swift */,
+				30B2574E21CC98D20039EF63 /* Tab2ViewController.swift */,
 				30B2572721CC93F30039EF63 /* Assets.xcassets */,
 				30B2572921CC93F30039EF63 /* LaunchScreen.storyboard */,
 				30B2572C21CC93F30039EF63 /* Info.plist */,
-				30B2574E21CC98D20039EF63 /* Tab2ViewController.swift */,
 			);
 			path = ChangeData;
 			sourceTree = "<group>";
